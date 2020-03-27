@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{'Mon panier'|trans}}{% endblock %}
+
+{% block body %}
+
+<ul class="nav nav-tabs">
+  <li class="nav-items">
+    <a class="nav-link active" href="{{path('produit')}}">{{'Produit'|trans}}</a>
+  </li>
+  <li class="nav-items">
+    <a class="nav-link active" href="{{path('panier')}}">{{'Panier'|trans}}</a>
+  </li>
+</ul>
+
+<style></style>
+
+	<div class="">
+
+		<h1>{{'Mon panier'|trans}}</h1>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>{{'nom'|trans}}</th>
+						<th>{{'quantite'|trans}}</th>
+						<th>{{'montant'|trans}}</th>
+                    </tr>
+				</thead>
+
+		{% for produit in panier %}
+                            <td>
+								<a type="button" class="btn btn-danger" href="{{path('delete_produit_panier',{'id':produit.id})}}">{{'supprimer'}}</a>
+							</td>
+        {% endfor %}
+
+			<td>{{'Montant total du panier'|trans}}<td>
+
+		</table>
+		<p>{{'Votre panier ne contient aucun produit'|trans}}</p>
+	</div>
+
+{% endblock %}

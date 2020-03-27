@@ -1,0 +1,21 @@
+Name: "Nom"
+Photo: "Photo"
+Quantity: "Quantite"
+Price: "Prix"
+Submit: "Envoyer"
+
+produit:
+    Products: "Produit"
+    Name: "Nom"
+    Photo: "Photo"
+    Quantity: "Quantite"
+    Price: "Prix"
+    Delete: "Supprimer"
+    Submit: "Envoyer"
+
+panier: 
+    Shopping cart: "Panier"
+    My shopping cart: "Mon panier"
+    There is no products in your shopping cart: "Votre panier ne contient aucun produit"
+    Delete: "Supprimer"
+    Total shopping cart amount: "Montant total du panier"

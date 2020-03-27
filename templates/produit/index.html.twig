@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{'produit'|trans}}{% endblock %}
+
+{% block body %}
+
+<ul class="nav nav-tabs">
+  <li class="nav-items">
+    <a class="nav-link active" href="{{path('produit')}}">{{'Produit'|trans}}</a>
+  </li>
+  <li class="nav-items">
+    <a class="nav-link active" href="{{path('panier')}}">{{'Panier'|trans}}</a>
+  </li>
+</ul>
+
+    {% for produit in produits %}
+                   <table class="table"> 
+                    <tr>
+                        <td>
+                            <a href="{{ path('un_produit', {'id':produit.id}) }}">
+                                {{ produit.nom }}
+                            </a>
+                        </td>
+                        <td>{{ produit.photo}}</td>
+                        <td>{{ produit.nom|trans}}</td>
+                        <td>{{ produit.quantite|trans}}</td>
+                        <td>{{ produit.prix|trans}}€</td>
+                        <td>
+                            <a href="{{ path('delete_produit', {'id':produit.id}) }}">
+                                {{'Supprimer'|trans}}
+                            </a>
+                        </td>
+                    </tr>
+                 <table>
+                {% endfor %}
+                {{form(form_produit_new)}}
+    
+{% endblock %}
